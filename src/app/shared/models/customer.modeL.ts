@@ -5,6 +5,7 @@ export class Customer {
   address: string;
   vat: number;
   avatar: string;
+  id?: number;
 
   constructor(name: string, email: string, city: string, address: string, vat: number, avatar: string = 'assets/avatar.png'){
     this.name = name;

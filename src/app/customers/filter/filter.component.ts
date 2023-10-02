@@ -7,7 +7,7 @@ import { Filter } from '../../shared/models/filter.model';
   styleUrls: ['./filter.component.css']
 })
 export class FilterComponent {
-  filter: Filter = { name: '', city: '', vat: 0 };
+  filter: Filter = { name: '', city: '', vat: undefined };
 
   @Output() filterChanged = new EventEmitter<any>();
 

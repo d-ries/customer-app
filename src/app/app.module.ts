@@ -8,6 +8,12 @@ import { NavbarComponent } from './core/navbar/navbar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FilterComponent } from './customers/filter/filter.component';
+import { InmemoryDataService } from './shared/services/inmemorydata.service';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { CustomerFormComponent } from './customers/customer-form/customer-form.component';
+import { AddCustomerComponent } from './customers/add-customer/add-customer.component';
+import { UpdateCustomerComponent } from './customers/update-customer/update-customer.component';
+import { AppRoutingModule } from './shared/routing/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -15,13 +21,18 @@ import { FilterComponent } from './customers/filter/filter.component';
     CustomerItemComponent,
     CustomerListComponent,
     NavbarComponent,
-    FilterComponent
+    FilterComponent,
+    CustomerFormComponent,
+    AddCustomerComponent,
+    UpdateCustomerComponent
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(InmemoryDataService)
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,7 @@
 <app-filter></app-filter>
-<div class="card-container">
-  <app-customer-item *ngFor="let item of customerList" [customer]="item"></app-customer-item>
+<div class="md:container md:mx-auto container mx-auto mt-10">
+  <div class="grid grid-cols-3 gap-6">
+    <app-customer-item *ngFor="let item of customerList$ | async" [customer]="item"></app-customer-item>
+  </div>
 </div>
 
