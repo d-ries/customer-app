@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { Customer } from 'src/app/shared/models/customer.modeL';
+import { Filter } from 'src/app/shared/models/filter.model';
 import { CustomerService } from 'src/app/shared/services/customer.service';
 
 @Component({
@@ -22,6 +23,21 @@ export class CustomerListComponent implements OnInit {
       */
      this.customerList$ = this.customerService.getAllCustomers();
 
+  }
+
+  handleFilter(filter: Filter){
+    console.log(filter);
+      this.customerList$ = this.customerList$.pipe(
+        map((data: Customer[]) => {
+            return data.filter(customer=>{
+              const matchesName = customer.name.toLowerCase().includes(filter.name.toLowerCase());
+              const matchesCity = customer.city.toLowerCase().includes(filter.city.toLowerCase());
+              const matchesVat = filter.vat ? customer.vat == filter.vat : true;
+
+              return matchesName && matchesCity && matchesVat;
+            })
+        })
+      )
   }
 
 }

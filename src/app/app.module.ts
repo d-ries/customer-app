@@ -14,6 +14,7 @@ import { CustomerFormComponent } from './customers/customer-form/customer-form.c
 import { AddCustomerComponent } from './customers/add-customer/add-customer.component';
 import { UpdateCustomerComponent } from './customers/update-customer/update-customer.component';
 import { AppRoutingModule } from './shared/routing/app-routing.module';
+import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AppRoutingModule } from './shared/routing/app-routing.module';
     FilterComponent,
     CustomerFormComponent,
     AddCustomerComponent,
-    UpdateCustomerComponent
+    UpdateCustomerComponent,
+    CustomerDetailComponent
   ],
   imports: [
     BrowserModule,

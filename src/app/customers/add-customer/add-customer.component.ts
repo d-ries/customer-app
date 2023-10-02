@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Customer } from 'src/app/shared/models/customer.modeL';
 import { CustomerService } from 'src/app/shared/services/customer.service';
 
@@ -8,11 +9,11 @@ import { CustomerService } from 'src/app/shared/services/customer.service';
   styleUrls: ['./add-customer.component.css']
 })
 export class AddCustomerComponent {
-  constructor(private customerService: CustomerService){}
+  constructor(private customerService: CustomerService, private router: Router){}
 
   handleSubmit(customer: Customer){
-    this.customerService.addCustomer(customer).subscribe();
+    this.customerService.addCustomer(customer).subscribe(() => {
+      this.router.navigate(['']);
+    });
   }
-
-
 }
