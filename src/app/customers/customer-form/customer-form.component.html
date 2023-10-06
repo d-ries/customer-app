@@ -13,6 +13,11 @@
       <div *ngIf="customerForm.get('email')?.touched && customerForm.get('email')?.hasError('email')" class="text-red-500 text-sm mt-1">This is not a valid email address</div>
     </div>
     <div class="mb-4">
+      <label for="text" class="block text-gray-700 text-sm font-bold mb-2">Avatar url:</label>
+      <input type="text" id="avatar" formControlName="avatar" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+      <div *ngIf="customerForm.get('avatar')?.touched && customerForm.get('avatar')?.hasError('required')" class="text-red-500 text-sm mt-1">Avatar is required</div>
+    </div>
+    <div class="mb-4">
       <label for="city" class="block text-gray-700 text-sm font-bold mb-2">City:</label>
       <input type="text" id="city" formControlName="city" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
       <div *ngIf="customerForm.get('city')?.touched && customerForm.get('city')?.hasError('required')" class="text-red-500 text-sm mt-1">City is required</div>
@@ -21,6 +26,16 @@
       <label for="address" class="block text-gray-700 text-sm font-bold mb-2">Address:</label>
       <input type="text" id="address" formControlName="address" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
       <div *ngIf="customerForm.get('address')?.touched && customerForm.get('address')?.hasError('required')" class="text-red-500 text-sm mt-1">Address is required</div>
+    </div>
+    <div class="mb-4">
+      <label for="address" class="block text-gray-700 text-sm font-bold mb-2">Country:</label>
+      <select formControlName="country" id="country" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        <option value="" ></option>
+        <option value="belgium">Belgium</option>
+        <option value="USA">United states</option>
+        <option value="other">Other</option>
+      </select>
+      <div *ngIf="customerForm.get('country')?.touched && customerForm.get('country')?.hasError('required')" class="text-red-500 text-sm mt-1">Country is required</div>
     </div>
     <div class="mb-6">
       <label for="vat" class="block text-gray-700 text-sm font-bold mb-2">VAT:</label>

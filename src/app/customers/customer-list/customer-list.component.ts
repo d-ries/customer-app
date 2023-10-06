@@ -26,7 +26,6 @@ export class CustomerListComponent implements OnInit {
   }
 
   handleFilter(filter: Filter){
-    console.log(filter);
       this.customerList$ = this.customerList$.pipe(
         map((data: Customer[]) => {
             return data.filter(customer=>{

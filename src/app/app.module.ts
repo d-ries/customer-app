@@ -12,9 +12,8 @@ import { InmemoryDataService } from './shared/services/inmemorydata.service';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { CustomerFormComponent } from './customers/customer-form/customer-form.component';
 import { AddCustomerComponent } from './customers/add-customer/add-customer.component';
-import { UpdateCustomerComponent } from './customers/update-customer/update-customer.component';
 import { AppRoutingModule } from './shared/routing/app-routing.module';
-import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
+import { CustomerDetailComponent } from './customers/customer-detail/customer-detail.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +24,6 @@ import { CustomerDetailComponent } from './customer-detail/customer-detail.compo
     FilterComponent,
     CustomerFormComponent,
     AddCustomerComponent,
-    UpdateCustomerComponent,
     CustomerDetailComponent
   ],
   imports: [

@@ -3,15 +3,17 @@ export class Customer {
   email: string;
   city: string;
   address: string;
+  country: string;
   vat: number;
   avatar: string;
   id?: number;
 
-  constructor(name: string, email: string, city: string, address: string, vat: number, avatar: string = 'assets/avatar.png'){
+  constructor(name: string, email: string, city: string, address: string, country: string, vat: number, avatar: string = 'assets/avatar.png'){
     this.name = name;
     this.email = email;
     this.city = city;
     this.address = address;
+    this.country = country;
     this.vat = vat;
     this.avatar = avatar;
   }
