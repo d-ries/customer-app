@@ -17,4 +17,10 @@ export class CustomerDetailComponent implements OnInit {
     const id: number = this.route.snapshot.params['id'];
     this.customer$ = this.customerService.getCustomer(id);
   }
+
+  toggleLoyal(customer: Customer) {
+    customer.isLoyal = !customer.isLoyal;
+    this.customerService.updateCustomer(customer).subscribe();
+
+  }
 }

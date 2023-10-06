@@ -5,6 +5,7 @@ export class Customer {
   address: string;
   country: string;
   vat: number;
+  isLoyal: boolean;
   avatar: string;
   id?: number;
 
@@ -15,6 +16,7 @@ export class Customer {
     this.address = address;
     this.country = country;
     this.vat = vat;
+    this.isLoyal = false;
     this.avatar = avatar;
   }
 }
