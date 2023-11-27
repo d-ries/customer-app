@@ -1,5 +1,5 @@
 import { CanDeactivateFn } from '@angular/router';
-import { AddCustomerComponent } from 'src/app/customers/add-customer/add-customer.component';
+import { AddCustomerComponent } from '../../core/customers/add-customer/add-customer.component';
 
 export const confirmLeaveGuard: CanDeactivateFn<AddCustomerComponent> = (component, currentRoute, currentState, nextState) => {
   if(component.formComponent.customerForm.dirty && !component.formComponent.isSubmitted){
@@ -7,5 +7,4 @@ export const confirmLeaveGuard: CanDeactivateFn<AddCustomerComponent> = (compone
   }else{
     return true;
   }
-
 };
