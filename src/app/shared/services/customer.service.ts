@@ -23,4 +23,6 @@ export class CustomerService {
     { id: 9, name: 'Pablo Hernandez', email: 'pablo.hernandez@example.com', city: 'Barcelona', address: '666 Elm St', country: 'Spain', vat: 18, isLoyal: false, avatar: 'assets/default.png' }
   ]);
 
+  singleCustomer$: Observable<Customer> = of( { id: 1, name: 'Dries Swinnen', email: 'dries.swinnen@lab.com', city: 'Pelt', address: 'Stationstraat 36', country: 'Belgium', vat: 21, isLoyal: true, avatar: '/assets/default.png' });
+
 }
